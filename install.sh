@@ -1,5 +1,22 @@
+#-------------------------
+#        Homebrew
+#-------------------------
+
 if ! [ "$(command -v brew)" ]; then
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
+
+#-------------------------
+#        .zshrc
+#-------------------------
+
+FILE=~/.zshrc
+if test -f "$FILE"; 
+  then
+    echo "$FILE exist"
+  else
+    echo "creates $FILE" 
+    touch $FILE
 fi
 
 #-------------------------
