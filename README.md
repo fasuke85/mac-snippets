@@ -1,5 +1,9 @@
 # mac-snippets
 
+```
+curl https://raw.githubusercontent.com/fasuke85/mac-snippets/master/install.sh | sh
+```
+
 ## Bash scripts
 - `mkdir bin`
 - In .zshrc: `export PATH=$PATH:/Users/<username>/bin`
