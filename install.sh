@@ -2,14 +2,14 @@
 #        Utils
 #-------------------------
 
-ZSHRC=~/.zshrc
+zshConf=~/.zshrc
 
 function addToZshrc {
-  if grep -q $1 $ZSHRC; 
+  if grep -q $1 $zshConf; 
   then
       echo "$1 already added"
   else
-      echo $2 >> $ZSHRC
+      echo $2 >> $zshConf
   fi    
 }
 
@@ -26,12 +26,12 @@ fi
 #-------------------------
 
 ZSHRC=~/.zshrc
-if test -f "$ZSHRC"; 
+if test -f "$zshConf"; 
   then
-    echo "$ZSHRC exist"
+    echo "$zshConf exist"
   else
-    echo "creates $ZSHRC" 
-    touch $ZSHRC
+    echo "creates $zshConf" 
+    touch $zshConf
 fi
 
 brew tap sambadevi/powerlevel9k
@@ -54,13 +54,13 @@ mkdir -p ~/.bar
 curl -o ~/.bar/git-completion.bash https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
 curl -o ~/.bar/_git https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.zsh
 
-COMPLETION="
+completion="
 \n# Load Git completion
 \nzstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
 \nfpath=(~/.zsh $fpath)
 \nautoload -Uz compinit && compinit"
 
-addToZshrc "~/.zsh/git-completion.bash" "$COMPLETION"
+addToZshrc "~/.zsh/git-completion.bash" "$completion"
 
 
 #-------------------------
@@ -74,8 +74,15 @@ brew install wget
 curl https://raw.githubusercontent.com/scopatz/nanorc/master/install.sh | sh
 
 # set nano as default editor
-NANO="
+nanoTxt="
 \nexport EDITOR=/usr/local/bin/nano
 \nexport VISUAL=/usr/local/bin/nano"
 
-addToZshrc "EDITOR" "$NANO"
+addToZshrc "EDITOR" "$nanoTxt"
+
+
+#-------------------------
+#         Alias
+#-------------------------
+
+addToZshrc "got" "alias got=\"git\""
