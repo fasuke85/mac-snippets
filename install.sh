@@ -86,3 +86,18 @@ addToZshrc "EDITOR" "$nanoTxt"
 #-------------------------
 
 addToZshrc "got" "alias got=\"git\""
+
+
+#-------------------------
+#         Files
+#-------------------------
+
+git clone https://github.com/fasuke85/mac-snippets.git ./.temp
+
+# bin scripts
+mkdir ~/bin
+cp .temp/bin/* ~/bin
+find ~/bin -type f -name "*" -exec chmod u+x {} \;
+
+# cleanup
+rm -rf .temp
