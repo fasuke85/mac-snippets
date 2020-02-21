@@ -1,0 +1,11 @@
+#!/bin/sh
+folder=$(basename "$@" | sed s/.git//)
+
+zshConf=~/.zshrc
+if grep -q "WORK_SPACE" $zshConf; 
+  then
+    git clone $@ "$WORK_SPACE/$folder"
+    open -na "IntelliJ IDEA.app" --args "$WORK_SPACE/$folder/pom.xml"
+  else
+      echo "WORK_SPACE env does not exist"
+fi    
