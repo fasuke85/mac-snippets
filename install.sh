@@ -86,6 +86,7 @@ addToZshrc "EDITOR" "$nanoTxt"
 #-------------------------
 
 addToZshrc "got" "alias got=\"git\""
+addToZshrc "snip" "alias snip=\"chrome https://github.com/fasuke85/mac-snippets\""
 
 
 #-------------------------
