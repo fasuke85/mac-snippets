@@ -4,6 +4,9 @@
 curl https://raw.githubusercontent.com/fasuke85/mac-snippets/master/install.sh | sh
 ```
 
+To fix fonts: Terminal -> Preferences -> Profiles -> Text -> Change Font to Hack Nerd Font
+
+
 ## Bash scripts
 - `mkdir bin`
 - In .zshrc: `export PATH=$PATH:/Users/<username>/bin`
