@@ -13,6 +13,12 @@ To fix fonts: Terminal -> Preferences -> Profiles -> Text -> Change Font to Hack
 - First line in script: `#!/bin/bash`
 - Make executable: `chmod u+x <script>`
 
+## Copy from terminal
+```
+pwd | pbcopy
+pbcopy < file.txt
+```
+
 ## sudo with touch id
 - `sudo nano /etc/pam.d/sudo`
 - add to the top: `auth sufficient pam_tid.so` 
