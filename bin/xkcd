@@ -1,0 +1,21 @@
+#!/bin/sh
+
+removeQuotes()
+{
+	# Grab input.
+	declare input=${1:-$(</dev/stdin)};
+	# Use that input to do anything.
+	echo $(echo $input | sed s/\"//g)
+}
+
+if [ "$@" == "--latest" ] || [ "$@" == "-l" ]; 
+  then
+    url=$(curl "https://xkcd.com/info.0.json" | jq '.img' | removeQuotes)
+    open $url
+  else
+    max=$(jq '.num' info.0.json | removeQuotes )
+    num=$(jot -r 1 $ $max)
+
+    randomUrl=$(curl "https://xkcd.com/$num/info.0.json" | jq '.img' | removeQuotes)
+    open $randomUrl
+fi

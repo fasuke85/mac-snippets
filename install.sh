@@ -57,7 +57,7 @@ curl -o ~/.bar/_git https://raw.githubusercontent.com/git/git/master/contrib/com
 completion="
 \n# Load Git completion
 \nzstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
-\nfpath=(~/.zsh $fpath)
+\nfpath=(~/.zsh \$fpath)
 \nautoload -Uz compinit && compinit"
 
 addToZshrc "~/.zsh/git-completion.bash" "$completion"
@@ -80,6 +80,11 @@ nanoTxt="
 
 addToZshrc "EDITOR" "$nanoTxt"
 
+#-------------------------
+#         MISC Tools
+#-------------------------
+
+brew install jq
 
 #-------------------------
 #         Alias
@@ -87,7 +92,7 @@ addToZshrc "EDITOR" "$nanoTxt"
 
 addToZshrc "got" "alias got=\"git\""
 addToZshrc "snip" "alias snip=\"chrome https://github.com/fasuke85/mac-snippets\""
-addToZshrc "update" "alias snip=\"curl https://raw.githubusercontent.com/fasuke85/mac-snippets/master/install.sh | sh\""
+addToZshrc "update" "alias update=\"curl https://raw.githubusercontent.com/fasuke85/mac-snippets/master/install.sh | sh\""
 
 
 #-------------------------
